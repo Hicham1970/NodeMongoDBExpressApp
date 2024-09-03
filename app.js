@@ -81,14 +81,35 @@ app.get("/single-blog", (req, res) => {
     });
 });
 
-// without mongoose magics
+// the blog or any collection routes
+
+// page principale index par exemple
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "index.html"));
+  res.redirect("/blogs");
+});
+
+app.get("/blogs", (req, res) => {
+  Blog.find()
+    .then((data) => {
+      res.render("index", { title: "All blogs", blogs: data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.get("/about", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "about.html"));
 });
+
+app.get("/create", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "create.html"));
+});
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
+
 //* add the 404 doc
 // gestion des erreurs:
 // app.use((err, req, res, next) => {

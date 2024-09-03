@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/post" method="post">
+            <label for="reg_no">Registration Number :</label>
+            <input type="text" name="reg_no">
+            <label for="name">Name :</label>
+            <input type="text" name="name">
+            <label for="email">Email :</label>
+            <input type="email" name="email">
+            <label for="brance">Branch :</label>
+            <select name="branch">
+                <option value="SCZ">SCZ</option>
+                <option value="IT">IT</option>
+                <option value="EFE">EFE</option>
+                <option value="SKA">SKA</option>
+                <option value="MOP">MOP</option>
+            </select>
+            <label for="phone">Phone N° :</label>
+            <input type="text" name="phone">
+            <label for="address">Address :</label>
+            <input type="text" name="address">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
