@@ -14,7 +14,7 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    branch: {
+    branche: {
       type: String,
       required: true,
     },

@@ -1,10 +1,12 @@
 {
-  "name": "nodemongodbexpressapp",
+  "name": "node_mongodb_express_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server3.js"
   },
   "keywords": [],
   "author": "",

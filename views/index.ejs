@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include('./Partials/head.ejs') %>
 
     <body>
         <%- include('./Partials/nav.ejs') %>
             <div class="blog content">
-                <!-- Ici on aura une table qui affiche tout les users -->
                 <h1>All Users</h1>
-            </div>
-            <%- include('./Partials/footer.ejs') %>
+                <!-- Ici on aura une table qui affiche tout les users -->
+                <div class="blog content">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Reg_No</th>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Branche</th>
+                                <th>Téléphone</th>
+                                <th>Adresse</th>
+                            </tr>
+                        </thead>
+                        <% if (users.length> 0) { %>
+                            <% users.forEach(user=> { %>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <%= user.reg_no %>
+                                        </td>
+                                        <td>
+                                            <%= user.name %>
+                                        </td>
+                                        <td>
+                                            <%= user.email %>
+                                        </td>
+                                        <td>
+                                            <%= user.branche %>
+                                        </td>
+                                        <td>
+                                            <%= user.phone %>
+                                        </td>
+                                        <td>
+                                            <%= user.address %>
+                                        </td>
+                                        <td>
+                                            <a class="delete" data-doc="<%= user._id %>">
+                                                <img src="/delete_24.svg" alt="delete icon">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <% }) %>
+                                    <% } %>
+                    </table>
+                </div>
+
+                <%- include('./Partials/footer.ejs') %>
 
     </body>
 
