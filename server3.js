@@ -52,13 +52,12 @@ db.once("open", () => {
   console.log("Connected to My Database");
 });
 
-// user routes
-
+// Accéder a la page about
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
-// create the 404 page
-app.use((req, res) => {
+// create the 404 page pour gérer les erreurs
+app.use((req, res, next) => {
   res.status(404).render("404", { title: "404" });
 });
